@@ -11,11 +11,26 @@ export const PokemonUl = styled.ul`
 `
 
 export const PokemonLi = styled.li`
-    width:100px;
+    max-width:100px;
+    min-width:100px;
     padding:10px;
     margin:auto;
 `
-export const PokemonButton = styled(Link)`
+// export const PokemonButton = styled(Link)`
+//     width:100%;
+//     text-decoration:none;
+//     color:white;
+//     font-size:16px;
+//     background:transparent;
+//     border:none;
+//     padding:10px;
+//     border-radius:10px;
+//     border:2px solid white;
+//     cursor:pointer;
+// `
+
+export const PokemonButton = styled(Link).attrs(() => ({ tabIndex: 0 }))`
+    width:100%;
     text-decoration:none;
     color:white;
     font-size:16px;
@@ -23,5 +38,13 @@ export const PokemonButton = styled(Link)`
     border:none;
     padding:10px;
     border-radius:10px;
+    border:2px solid white;
     cursor:pointer;
+    transition: all .1s ease;
+
+    &:hover{
+        font-size:18px;
+        background:#D5A100;
+        border:2.5px solid white;
+    }
 `

@@ -20,7 +20,7 @@ function PokemonProvider(props) {
     }
 
     async function fetchData_Function_Link() {
-        const req = await axios.get(fetchValue);
+        const req = await axios.get(localStorage.getItem("url"));
         console.log(req.data);
         setFetchData(req.data);
         setIsFetching(true);
@@ -36,6 +36,7 @@ function PokemonProvider(props) {
     function setFetch_Value(link) {
         let valueToSkip = home.length;
         let url = link.slice(valueToSkip);
+        localStorage.setItem("url", url);
         setFetchValue(url);
         setIsFetching(false);
     }
